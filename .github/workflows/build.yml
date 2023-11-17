@@ -20,11 +20,10 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.x
-    - name: ls
-      run: ls
-    # - name: Restore dependencies
-    #   run: dotnet restore
-    # - name: Build
-    #   run: dotnet build --no-restore
-    # - name: Test
-    #   run: dotnet test --no-build --verbosity normal
+
+    - name: Restore dependencies
+      run: dotnet restore PreMed/PreMed.csproj 
+    - name: Build
+      run: dotnet build PreMed/PreMed.csproj --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
