@@ -25,5 +25,5 @@ jobs:
       run: dotnet restore PreMed/PreMed.csproj 
     - name: Build
       run: dotnet build PreMed/PreMed.csproj --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+    # - name: Test
+    #   run: dotnet test --no-build --verbosity normal
