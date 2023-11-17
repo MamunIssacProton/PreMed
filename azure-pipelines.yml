@@ -12,11 +12,14 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-
-- task: AzureWebApp@1
+- task: DotNetCoreCLI@2
   inputs:
-    azureSubscription: 'Visual Studio Enterprise Ultimate Subscription(e9d2e652-4321-4316-a8b2-2a2130d54818)'
-    appType: 'webAppLinux'
-    appName: 'tools-premed'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    runtimeStack: 'DOTNETCORE|7.0'
+    command: 'build'
+    projects: '$(System.DefaultWorkingDirectory)/PreMed/PreMed.csproj'
+# - task: AzureWebApp@1
+#   inputs:
+#     azureSubscription: 'Visual Studio Enterprise Ultimate Subscription(e9d2e652-4321-4316-a8b2-2a2130d54818)'
+#     appType: 'webAppLinux'
+#     appName: 'tools-premed'
+#     package: '/**/*.zip'
+#     runtimeStack: 'DOTNETCORE|7.0'
